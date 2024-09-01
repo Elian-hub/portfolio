@@ -10,11 +10,17 @@ const Intro = () => {
   });
   return (
     <div>
-      <h2>
+      <p>Hello human,</p>
+      <h1>
         I'm a {''}
-        <span style={{ fontweight: 'bold', color: 'white' }}>{text}</span>
+        <span
+          className='text-2xl'
+          style={{ fontweight: 'bold', color: 'white' }}
+        >
+          {text}
+        </span>
         <Cursor />
-      </h2>
+      </h1>
     </div>
   );
 };
