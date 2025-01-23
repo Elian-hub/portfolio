@@ -3,6 +3,7 @@ import './App.css';
 import Header from './Components/Header/Header';
 import './scss/main.scss';
 import Intro from './Components/Intro/Intro';
+import Footer from './Components/Footer/Footer';
 
 function App() {
   const [isLoading, setIsLoading] = useState(true);
@@ -29,6 +30,7 @@ function App() {
     <div>
       <Header />
       <Intro />
+      <Footer />
     </div>
   );
 }
