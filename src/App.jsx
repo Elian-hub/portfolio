@@ -13,7 +13,7 @@ function App() {
   useEffect(() => {
     // Simulating a delay (e.g., fetching data or resources)
     const timer = setTimeout(() => {
-      setIsLoading(false); // Set loading to false after 2 seconds
+      setIsLoading(false); // Set loading to false after 3 seconds
     }, 3000);
 
     // Cleanup the timer in case of component unmounting

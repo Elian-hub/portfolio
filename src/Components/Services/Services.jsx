@@ -13,9 +13,9 @@ import {
 const Services = () => {
   return (
     <div>
-      <Grid2 container spacing={4} direction='row'>
-        <Grid2 item xs={12} sm={6} md={4} mt={6}>
-          <Card>
+      <Grid2 container spacing={4}>
+        <Grid2 item xs={12} sm={6} md={4}>
+          <Card sx={{ width: 300 }}>
             <CardMedia
               component='img'
               image='./assets/images/img1.jpg'
@@ -31,7 +31,12 @@ const Services = () => {
               </Typography>
             </CardContent>
             <CardActions>
-              <Box display='flex' justifyContent='center' minWidth={100}>
+              <Box
+                display='flex'
+                justifyContent='center'
+                minWidth='100%'
+                gap={2}
+              >
                 <Button variant='outlined'>click me</Button>
                 <Button variant='contained'>show more</Button>
               </Box>
@@ -39,7 +44,7 @@ const Services = () => {
           </Card>
         </Grid2>
         <Grid2 item xs={12} sm={6} md={4}>
-          <Card>
+          <Card sx={{ width: 300 }}>
             <CardMedia
               component='img'
               image='./assets/images/img2.jpg'
@@ -48,14 +53,17 @@ const Services = () => {
             <CardContent>
               <Typography variant='h4'>Web Development</Typography>
               <Typography variant='p'>
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quam
-                modi iste, nisi dignissimos, reiciendis illum sapiente
-                blanditiis eligendi nemo debitis delectus architecto eum ipsum
-                excepturi alias enim optio corrupti sed!
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                Expedita velit non tenetur minima cumque, laudantium molestiae?
               </Typography>
             </CardContent>
             <CardActions>
-              <Box display='flex' justifyContent='center' minWidth={100}>
+              <Box
+                display='flex'
+                justifyContent='center'
+                minWidth='100%'
+                gap={2}
+              >
                 <Button variant='outlined'>click me</Button>
                 <Button variant='contained'>show more</Button>
               </Box>
@@ -63,7 +71,7 @@ const Services = () => {
           </Card>
         </Grid2>
         <Grid2 item xs={12} sm={6} md={4}>
-          <Card>
+          <Card sx={{ width: 300 }}>
             <CardMedia
               component='img'
               image='./assets/images/img3.jpeg'
@@ -72,14 +80,18 @@ const Services = () => {
             <CardContent>
               <Typography variant='h4'>Smart Contract Development</Typography>
               <Typography variant='p'>
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quam
-                modi iste, nisi dignissimos, reiciendis illum sapiente
-                blanditiis eligendi nemo debitis delectus architecto eum ipsum
-                excepturi alias enim optio corrupti sed!
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure
+                quas blanditiis, molestias libero ea vel minima delectus dolore
+                suscipit enim?
               </Typography>
             </CardContent>
             <CardActions>
-              <Box display='flex' justifyContent='center' minWidth={100}>
+              <Box
+                display='flex'
+                justifyContent='center'
+                minWidth='100%'
+                gap={2}
+              >
                 <Button variant='outlined'>click me</Button>
                 <Button variant='contained'>show more</Button>
               </Box>
