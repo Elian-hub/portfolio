@@ -13,8 +13,8 @@ import {
 const Services = () => {
   return (
     <div>
-      <Grid2 container spacing={2} display='flex'>
-        <Grid2 item xs={12} sm={6} md={3}>
+      <Grid2 container spacing={4} direction='row'>
+        <Grid2 item xs={12} sm={6} md={4} mt={6}>
           <Card>
             <CardMedia
               component='img'
@@ -38,7 +38,7 @@ const Services = () => {
             </CardActions>
           </Card>
         </Grid2>
-        <Grid2 item xs={12} sm={6} md={3}>
+        <Grid2 item xs={12} sm={6} md={4}>
           <Card>
             <CardMedia
               component='img'
@@ -62,7 +62,7 @@ const Services = () => {
             </CardActions>
           </Card>
         </Grid2>
-        <Grid2 item xs={12} sm={6} md={3}>
+        <Grid2 item xs={12} sm={6} md={4}>
           <Card>
             <CardMedia
               component='img'

@@ -4,7 +4,7 @@ import './App.css';
 import Header from './Components/Header/Header';
 import './scss/main.scss';
 import Intro from './Components/Intro/Intro';
-import About from './Components/About Me/About';
+import About from './Components/AboutMe/About';
 import Services from './Components/Services/Services';
 
 function App() {
