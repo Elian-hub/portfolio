@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { FaHome } from 'react-icons/fa';
 import { FcAbout, FcServices } from 'react-icons/fc';
 import { FaBars, FaTimes } from 'react-icons/fa';
@@ -28,22 +29,22 @@ const Header = () => {
         }`}
       >
         <li className='lg:inline-block'>
-          <a href='/'>
+          <Link to='/'>
             <FaHome className='inline-block w-5 h-5 mr-1'></FaHome>
             HOME
-          </a>
+          </Link>
         </li>
         <li className='lg:inline-block'>
-          <a href='/'>
+          <Link to='/about'>
             <FcAbout className='inline-block w-5 h-5 mr-1'></FcAbout>
             ABOUT ME
-          </a>
+          </Link>
         </li>
         <li className='lg:inline-block'>
-          <a href='/'>
+          <Link to='/services'>
             <FcServices className='inline-block w-5 h-5 mr-1'></FcServices>
             SERVICES
-          </a>
+          </Link>
         </li>
       </ul>
     </div>
