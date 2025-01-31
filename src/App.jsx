@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Routes, Route } from 'react-router-dom';
+import { CircularProgress, Box, Typography } from '@mui/material';
 import './App.css';
 import Header from './Components/Header/Header';
 import './scss/main.scss';
@@ -22,12 +23,24 @@ function App() {
 
   if (isLoading) {
     return (
-      <div className='flex items-center justify-center min-h-screen text-white text-2xl'>
-        <p>Loading...</p>
-      </div>
+      <Box
+        justifyContent='center'
+        alignItems='center'
+        minHeight='100vh'
+        alignContent='center'
+      >
+        <CircularProgress thickness={10} size={70} sx={{ color: 'white' }} />
+        <Typography
+          variant='h6'
+          color='white'
+          fontWeight='bold'
+          fontFamily='cursive'
+        >
+          Loading...
+        </Typography>
+      </Box>
     );
   }
-
   return (
     <div>
       <Header />

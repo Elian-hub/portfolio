@@ -15,7 +15,7 @@ const Services = () => {
     <div>
       <Grid2 container spacing={4}>
         <Grid2 item xs={12} sm={6} md={4}>
-          <Card sx={{ width: 300 }}>
+          <Card sx={{ width: 350 }}>
             <CardMedia
               component='img'
               image='./assets/images/img1.jpg'
@@ -44,7 +44,7 @@ const Services = () => {
           </Card>
         </Grid2>
         <Grid2 item xs={12} sm={6} md={4}>
-          <Card sx={{ width: 300 }}>
+          <Card sx={{ width: 350 }}>
             <CardMedia
               component='img'
               image='./assets/images/img2.jpg'
@@ -53,8 +53,10 @@ const Services = () => {
             <CardContent>
               <Typography variant='h4'>Web Development</Typography>
               <Typography variant='p'>
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                Expedita velit non tenetur minima cumque, laudantium molestiae?
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eius
+                minima earum perspiciatis culpa qui soluta commodi quod alias
+                distinctio, laboriosam delectus, natus ducimus tempore unde
+                magnam incidunt mollitia architecto! Quae.
               </Typography>
             </CardContent>
             <CardActions>
@@ -71,7 +73,7 @@ const Services = () => {
           </Card>
         </Grid2>
         <Grid2 item xs={12} sm={6} md={4}>
-          <Card sx={{ width: 300 }}>
+          <Card sx={{ width: 350 }}>
             <CardMedia
               component='img'
               image='./assets/images/img3.jpeg'
