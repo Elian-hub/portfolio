@@ -12,10 +12,10 @@ import {
 
 const Services = () => {
   return (
-    <div>
-      <Grid2 container spacing={4}>
+    <Box>
+      <Grid2 container spacing={4} mt={4}>
         <Grid2 item xs={12} sm={6} md={4}>
-          <Card sx={{ width: 350 }}>
+          <Card sx={{ width: 400, height: 500 }}>
             <CardMedia
               component='img'
               image='./assets/images/img1.jpg'
@@ -44,7 +44,7 @@ const Services = () => {
           </Card>
         </Grid2>
         <Grid2 item xs={12} sm={6} md={4}>
-          <Card sx={{ width: 350 }}>
+          <Card sx={{ width: 400, height: 500 }}>
             <CardMedia
               component='img'
               image='./assets/images/img2.jpg'
@@ -73,7 +73,7 @@ const Services = () => {
           </Card>
         </Grid2>
         <Grid2 item xs={12} sm={6} md={4}>
-          <Card sx={{ width: 350 }}>
+          <Card sx={{ width: 400, height: 500 }}>
             <CardMedia
               component='img'
               image='./assets/images/img3.jpeg'
@@ -101,7 +101,7 @@ const Services = () => {
           </Card>
         </Grid2>
       </Grid2>
-    </div>
+    </Box>
   );
 };
 

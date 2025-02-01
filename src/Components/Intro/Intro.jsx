@@ -1,5 +1,6 @@
 //import React from 'react';
 import { useTypewriter } from 'react-simple-typewriter';
+import { Box, Typography } from '@mui/material';
 
 const Intro = () => {
   const [text] = useTypewriter({
@@ -10,16 +11,25 @@ const Intro = () => {
   });
 
   return (
-    <div className='flex flex-col items-center justify-center min-h-screen p-4 text-center md:text-left'>
-      <p className='text-lg md:text-xl mb-4'>Hello human,</p>
-      <h1 className='text-2xl md:text-3xl font-bold '>
+    <Box
+      sx={{
+        display: 'flex',
+        flexDirection: 'column',
+        justifyContent: 'center',
+        alignItems: 'center',
+        height: '100vh',
+        textAlign: 'center',
+        gap: 2,
+      }}
+    >
+      <Typography variant='h5'>Hello human,</Typography>
+      <Typography variant='h4' fontWeight='bold'>
         I&apos;m a{' '}
-        <span className='text-2xl text-white md:text-4xl font-bold'>
+        <span style={{ color: 'white', fontWeight: 'bold', fontSize: '4-xl' }}>
           {text}
         </span>
-        {/* <Cursor /> */}
-      </h1>
-    </div>
+      </Typography>
+    </Box>
   );
 };
 

@@ -7,12 +7,13 @@ import './scss/main.scss';
 import Intro from './Components/Intro/Intro';
 import About from './Components/AboutMe/About';
 import Services from './Components/Services/Services';
+import Contact from './Components/Contact/Contact';
 
 function App() {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    // Simulating a delay (e.g., fetching data or resources)
+    // Simulating a delay
     const timer = setTimeout(() => {
       setIsLoading(false); // Set loading to false after 3 seconds
     }, 3000);
@@ -48,6 +49,7 @@ function App() {
         <Route path='/' element={<Intro />} />
         <Route path='/about' element={<About />} />
         <Route path='/services' element={<Services />} />
+        <Route path='/contact' element={<Contact />} />
       </Routes>
     </div>
   );

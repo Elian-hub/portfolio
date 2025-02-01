@@ -14,7 +14,13 @@ const Header = () => {
         position='sticky'
         sx={{ background: 'transparent', display: 'flex' }}
       >
-        <Toolbar sx={{ display: 'flex', justifyContent: 'space-between' }}>
+        <Toolbar
+          sx={{
+            display: 'flex',
+            justifyContent: 'space-between',
+            cursor: 'pointer',
+          }}
+        >
           <Typography variant='h5' fontWeight='bold' color='white'>
             Elian Marube
           </Typography>
@@ -24,7 +30,7 @@ const Header = () => {
             gap={2}
             sx={{ flexGrow: 1, justifyContent: 'center' }}
           >
-            <Link to='/'>
+            <Link to='/' style={{ textDecoration: 'none' }}>
               <Typography
                 variant='h6'
                 color='white'
@@ -38,7 +44,7 @@ const Header = () => {
                 Home
               </Typography>
             </Link>
-            <Link to='/about'>
+            <Link to='/about' style={{ textDecoration: 'none' }}>
               <Typography
                 variant='h6'
                 color='white'
@@ -52,7 +58,7 @@ const Header = () => {
                 About
               </Typography>
             </Link>
-            <Link to='/services'>
+            <Link to='/services' style={{ textDecoration: 'none' }}>
               <Typography
                 variant='h6'
                 color='white'
@@ -66,9 +72,28 @@ const Header = () => {
                 Services
               </Typography>
             </Link>
+            <Link to='/contact' style={{ textDecoration: 'none' }}>
+              <Typography
+                variant='h6'
+                color='white'
+                sx={{
+                  '&:hover': {
+                    color: 'black',
+                    cursor: 'pointer',
+                  },
+                }}
+              >
+                Contact Me
+              </Typography>
+            </Link>
           </Box>
 
-          <Box sx={{ display: 'flex' }} gap={2}>
+          <Box
+            sx={{
+              display: 'flex',
+            }}
+            gap={2}
+          >
             <a href={urlGitHub} target='blank'>
               <FaGithub color='white' />
             </a>
