@@ -124,7 +124,7 @@ const Contact = () => {
                   backdropFilter: 'blur(10px)',
                 }}
               >
-                <Grid2 container spacing={2}>
+                <Grid2 container spacing={8}>
                   <Grid2 item size={{ xs: 12, md: 6 }}>
                     <TextField
                       fullWidth
@@ -138,6 +138,7 @@ const Contact = () => {
                       sx={{
                         borderRadius: '1rem',
                         input: { backgroundColor: 'white' },
+                        mb: 4,
                       }}
                     />
 
@@ -146,7 +147,7 @@ const Contact = () => {
                       label='Email'
                       name='email'
                       variant='filled'
-                      value={name}
+                      value={email}
                       error={!emailValid}
                       helperText={!emailValid && 'Please input an email'}
                       onChange={emailHandler}

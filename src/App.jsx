@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Routes, Route } from 'react-router-dom';
-import { CircularProgress, Box, Typography } from '@mui/material';
+import { CircularProgress, Box, Typography, Container } from '@mui/material';
+import bg3 from '/assets/images/bg3.jpg';
 import './App.css';
 import Header from './Components/Header/Header';
 import './scss/main.scss';
@@ -43,15 +44,30 @@ function App() {
     );
   }
   return (
-    <div>
-      <Header />
-      <Routes>
-        <Route path='/' element={<Intro />} />
-        <Route path='/about' element={<About />} />
-        <Route path='/services' element={<Services />} />
-        <Route path='/contact' element={<Contact />} />
-      </Routes>
-    </div>
+    <Container
+      maxWidth={false}
+      disableGutters
+      sx={{
+        //width: '100vw',
+        //height: '100vh',
+        backgroundImage: `url(${bg3})`,
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        backgroundRepeat: 'no-repeat',
+        margin: 0,
+        padding: 0,
+      }}
+    >
+      <div>
+        <Header />
+        <Routes>
+          <Route path='/' element={<Intro />} />
+          <Route path='/about' element={<About />} />
+          <Route path='/services' element={<Services />} />
+          <Route path='/contact' element={<Contact />} />
+        </Routes>
+      </div>
+    </Container>
   );
 }
 
