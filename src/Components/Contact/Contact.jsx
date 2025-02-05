@@ -58,12 +58,10 @@ const Contact = () => {
         backgroundColor: 'rgba(10, 10, 10, 1)',
         width: '100%',
         margin: '0',
+        pt: 4,
       }}
     >
-      <Typography
-        variant='h4'
-        sx={{ color: 'white', fontWeight: 'bold', mt: 4 }}
-      >
+      <Typography variant='h4' sx={{ color: 'white', fontWeight: 'bold' }}>
         Get In Touch
       </Typography>
       <Grid2 container spacing={2}>

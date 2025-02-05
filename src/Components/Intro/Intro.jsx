@@ -1,4 +1,3 @@
-//import React from 'react';
 import { useTypewriter } from 'react-simple-typewriter';
 import { Box, Typography } from '@mui/material';
 

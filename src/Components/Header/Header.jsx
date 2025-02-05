@@ -78,7 +78,7 @@ const Header = () => {
                 color='white'
                 sx={{
                   '&:hover': {
-                    color: 'black',
+                    color: 'grey',
                     cursor: 'pointer',
                   },
                 }}

@@ -48,14 +48,17 @@ function App() {
       maxWidth={false}
       disableGutters
       sx={{
-        //width: '100vw',
-        //height: '100vh',
+        minHeight: '100vh',
         backgroundImage: `url(${bg3})`,
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         backgroundRepeat: 'no-repeat',
+        backgroundAttachment: 'fixed',
+        display: 'flex',
+        flexDirection: 'column',
         margin: 0,
         padding: 0,
+        overflowY: 'auto',
       }}
     >
       <div>

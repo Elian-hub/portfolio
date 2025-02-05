@@ -1,7 +1,6 @@
 body {
   margin: 0;
   place-items: center;
-  /* overflow: hidden; */
   min-width: 320px;
   min-height: 100vh;
 }
