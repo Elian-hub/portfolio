@@ -81,6 +81,13 @@ const About = () => {
         direction={{ xs: 'column', md: 'row' }}
         divider={<Divider orientation='vertical' color='white' flexItem />}
         spacing={5}
+        sx={{
+          display: 'flex',
+          flexDirection: 'column',
+          justifyContent: 'center',
+          alignItems: 'center',
+          mx: 'auto',
+        }}
       >
         <Box>
           <Stack direction={'column'}>
