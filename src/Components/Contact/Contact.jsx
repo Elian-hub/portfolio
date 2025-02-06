@@ -45,7 +45,6 @@ const Contact = () => {
       setEmailValid(false);
       return;
     }
-
     if (message.trim().length === 0) {
       setMessageValid(false);
       return;
@@ -56,134 +55,165 @@ const Contact = () => {
     <Box
       sx={{
         backgroundColor: 'rgba(10, 10, 10, 1)',
-        width: '100%',
+        height: '100vh',
         margin: '0',
         pt: 4,
+        px: 4,
       }}
     >
-      <Typography variant='h4' sx={{ color: 'white', fontWeight: 'bold' }}>
+      <Typography
+        variant='h3'
+        sx={{ color: 'gray', fontWeight: 'bold', textAlign: 'center' }}
+      >
         Get In Touch
       </Typography>
-      <Grid2 container spacing={2}>
-        <Grid2 item size={{ xs: 12, md: 6 }}>
-          <Typography variant='h5' sx={{ color: 'white', fontWeight: 'bold' }}>
+
+      <Grid2
+        container
+        spacing={4}
+        justifyContent='center'
+        alignItems='center'
+        sx={{ mt: 8, px: 3 }}
+      >
+        <Grid2 item xs={12} md={6} sx={{ textAlign: 'center' }}>
+          <Typography
+            variant='h5'
+            sx={{ color: 'white', fontWeight: 'bold', mb: 2 }}
+          >
             CONTACT
           </Typography>
           <Box>
-            <Typography variant='body1' sx={{ color: 'white' }}>
-              <FaEnvelope style={{ marginRight: '8px' }} />
-              elianmars13@gmail.com
+            <Typography
+              variant='body1'
+              sx={{
+                color: 'white',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                gap: 1,
+              }}
+            >
+              <FaEnvelope /> elianmars13@gmail.com
             </Typography>
-            <Typography variant='body1' sx={{ color: 'white' }}>
-              <FaPhone style={{ marginRight: '8px' }} />
-              (+254)748249859
+            <Typography
+              variant='body1'
+              sx={{
+                color: 'white',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                gap: 1,
+                mt: 1,
+              }}
+            >
+              <FaPhone /> (+254)748249859
             </Typography>
           </Box>
-          <Box
-            sx={{
-              display: 'flex',
-              flexDirection: 'column',
-              alignItems: 'center',
-              mt: 2,
-            }}
-          >
+
+          <Box sx={{ mt: 4 }}>
             <Typography
               variant='h5'
-              sx={{ color: 'white', fontWeight: 'bold', mb: 1 }}
+              sx={{ color: 'white', fontWeight: 'bold', mb: 2 }}
             >
               FOLLOW ME
             </Typography>
-
-            <Box sx={{ display: 'flex', gap: 2, justifyContent: 'center' }}>
+            <Box sx={{ display: 'flex', justifyContent: 'center', gap: 3 }}>
               <a href={urlGitHub} target='_blank' rel='noopener noreferrer'>
-                <FaGithub color='white' size={20} />
+                <FaGithub color='white' size={28} />
               </a>
               <a href={urlLinkedIn} target='_blank' rel='noopener noreferrer'>
-                <FaLinkedin color='white' size={20} />
+                <FaLinkedin color='white' size={28} />
               </a>
               <a href={urlTwitter} target='_blank' rel='noopener noreferrer'>
-                <FaTwitter color='white' size={20} />
+                <FaTwitter color='white' size={28} />
               </a>
             </Box>
           </Box>
-          <Grid2 item size={{ xs: 12, md: 8 }}>
-            <Typography
-              variant='h5'
-              sx={{ color: 'white', fontWeight: 'bold' }}
-            >
-              SEND ME A NOTE
-            </Typography>
-            <Box sx={{ p: 3 }}>
-              <Box
-                onSubmit={submitHandler}
-                component='form'
+        </Grid2>
+
+        <Grid2 item xs={12} md={6} sx={{ textAlign: 'center' }}>
+          <Typography
+            variant='h5'
+            sx={{ color: 'white', fontWeight: 'bold', mb: 2 }}
+          >
+            SEND ME A NOTE
+          </Typography>
+          <Box
+            sx={{
+              backgroundColor: 'rgba(255,255,255,0.1)',
+              p: 4,
+              borderRadius: '12px',
+              backdropFilter: 'blur(10px)',
+            }}
+          >
+            <Box component='form' onSubmit={submitHandler}>
+              <Grid2 container spacing={2}>
+                <Grid2 item xs={12} sm={6}>
+                  <TextField
+                    fullWidth
+                    label='Name'
+                    name='name'
+                    variant='filled'
+                    value={name}
+                    error={!nameValid}
+                    helperText={!nameValid && 'Please input a name'}
+                    onChange={nameHandler}
+                    sx={{
+                      borderRadius: '8px',
+                      input: { backgroundColor: 'white' },
+                    }}
+                  />
+                </Grid2>
+                <Grid2 item xs={12} sm={6}>
+                  <TextField
+                    fullWidth
+                    label='Email'
+                    name='email'
+                    variant='filled'
+                    value={email}
+                    error={!emailValid}
+                    helperText={!emailValid && 'Please input an email'}
+                    onChange={emailHandler}
+                    sx={{
+                      borderRadius: '8px',
+                      input: { backgroundColor: 'white' },
+                    }}
+                  />
+                </Grid2>
+                <Grid2 item xs={12}>
+                  <TextField
+                    fullWidth
+                    label='Message'
+                    name='message'
+                    multiline
+                    rows={4}
+                    variant='filled'
+                    value={message}
+                    error={!messageValid}
+                    helperText={!messageValid && 'Please input a message'}
+                    onChange={messageHandler}
+                    sx={{ textarea: { backgroundColor: 'white' } }}
+                  />
+                </Grid2>
+              </Grid2>
+              <Button
+                type='submit'
+                variant='outlined'
                 sx={{
                   backgroundColor: 'transparent',
-                  backdropFilter: 'blur(10px)',
+                  height: '3rem',
+                  width: '10rem',
+                  display: 'flex',
+                  borderRadius: '3rem',
+                  color: 'grey',
+                  borderBlockColor: 'grey',
+                  '&:hover': { borderBlockColor: 'blue', color: 'white' },
                 }}
               >
-                <Grid2 container spacing={8}>
-                  <Grid2 item size={{ xs: 12, md: 6 }}>
-                    <TextField
-                      fullWidth
-                      label='Name'
-                      name='name'
-                      variant='filled'
-                      value={name}
-                      error={!nameValid}
-                      helperText={!nameValid && 'Please input a name'}
-                      onChange={nameHandler}
-                      sx={{
-                        borderRadius: '1rem',
-                        input: { backgroundColor: 'white' },
-                        mb: 4,
-                      }}
-                    />
-
-                    <TextField
-                      fullWidth
-                      label='Email'
-                      name='email'
-                      variant='filled'
-                      value={email}
-                      error={!emailValid}
-                      helperText={!emailValid && 'Please input an email'}
-                      onChange={emailHandler}
-                      sx={{
-                        borderRadius: '1rem',
-                        input: { backgroundColor: 'white' },
-                      }}
-                    />
-
-                    <Grid2>
-                      <Grid2
-                        item
-                        size={{ xs: 12, md: 12 }}
-                        sx={{ paddingBottom: '2rem' }}
-                      >
-                        <TextField
-                          fullWidth
-                          label='Message'
-                          name='message'
-                          multiline
-                          rows={4}
-                          variant='filled'
-                          value={message}
-                          error={!messageValid}
-                          helperText={!messageValid && 'Please input a message'}
-                          onChange={messageHandler}
-                          sx={{ textarea: { backgroundColor: 'white' } }}
-                        />
-                      </Grid2>
-                    </Grid2>
-                    <Button variant='contained' type='submit'>
-                      Send Message
-                    </Button>
-                  </Grid2>
-                </Grid2>
-              </Box>
+                Send Message
+              </Button>
             </Box>
-          </Grid2>
+          </Box>
         </Grid2>
       </Grid2>
     </Box>

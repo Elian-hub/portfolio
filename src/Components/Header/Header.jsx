@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import {
   Box,
   Typography,
@@ -16,6 +16,7 @@ import { FaLinkedin, FaGithub, FaTwitter } from 'react-icons/fa';
 
 const Header = () => {
   const [drawerOpen, setDrawerOpen] = useState(false);
+  const location = useLocation();
 
   const urlLinkedIn =
     'https://www.linkedin.com/in/elian-marube-2891a52bb?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app';
@@ -37,7 +38,8 @@ const Header = () => {
     <AppBar
       position='sticky'
       sx={{
-        background: 'transparent',
+        background:
+          location.pathname === '/' ? 'transparent' : 'rgba(0, 0, 0, 0.7)',
         width: '100%',
         left: 0,
         right: 0,
