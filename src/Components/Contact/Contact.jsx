@@ -148,45 +148,48 @@ const Contact = () => {
           >
             <Box component='form' onSubmit={submitHandler}>
               <Grid2 container spacing={2}>
-                <Grid2 item xs={12} sm={6}>
-                  <TextField
-                    fullWidth
-                    label='Name'
-                    name='name'
-                    variant='filled'
-                    value={name}
-                    error={!nameValid}
-                    helperText={!nameValid && 'Please input a name'}
-                    onChange={nameHandler}
-                    sx={{
-                      borderRadius: '8px',
-                      input: { backgroundColor: 'white' },
-                    }}
-                  />
+                <Grid2 container item spacing={2}>
+                  <Grid2 item xs={12} sm={6}>
+                    <TextField
+                      fullWidth
+                      label='Name'
+                      name='name'
+                      variant='filled'
+                      value={name}
+                      error={!nameValid}
+                      helperText={!nameValid && 'Please input a name'}
+                      onChange={nameHandler}
+                      sx={{
+                        borderRadius: '8px',
+                        input: { backgroundColor: 'white' },
+                      }}
+                    />
+                  </Grid2>
+                  <Grid2 item xs={12} sm={6}>
+                    <TextField
+                      fullWidth
+                      label='Email'
+                      name='email'
+                      variant='filled'
+                      value={email}
+                      error={!emailValid}
+                      helperText={!emailValid && 'Please input an email'}
+                      onChange={emailHandler}
+                      sx={{
+                        borderRadius: '8px',
+                        input: { backgroundColor: 'white' },
+                      }}
+                    />
+                  </Grid2>
                 </Grid2>
-                <Grid2 item xs={12} sm={6}>
-                  <TextField
-                    fullWidth
-                    label='Email'
-                    name='email'
-                    variant='filled'
-                    value={email}
-                    error={!emailValid}
-                    helperText={!emailValid && 'Please input an email'}
-                    onChange={emailHandler}
-                    sx={{
-                      borderRadius: '8px',
-                      input: { backgroundColor: 'white' },
-                    }}
-                  />
-                </Grid2>
+
                 <Grid2 item xs={12}>
                   <TextField
                     fullWidth
                     label='Message'
                     name='message'
                     multiline
-                    rows={4}
+                    rows={3}
                     variant='filled'
                     value={message}
                     error={!messageValid}
@@ -196,22 +199,29 @@ const Contact = () => {
                   />
                 </Grid2>
               </Grid2>
-              <Button
-                type='submit'
-                variant='outlined'
-                sx={{
-                  backgroundColor: 'transparent',
-                  height: '3rem',
-                  width: '10rem',
-                  display: 'flex',
-                  borderRadius: '3rem',
-                  color: 'grey',
-                  borderBlockColor: 'grey',
-                  '&:hover': { borderBlockColor: 'blue', color: 'white' },
-                }}
+
+              <Grid2
+                item
+                xs={12}
+                sx={{ display: 'flex', justifyContent: 'center' }}
               >
-                Send Message
-              </Button>
+                <Button
+                  type='submit'
+                  variant='outlined'
+                  sx={{
+                    backgroundColor: 'transparent',
+                    height: '3rem',
+                    width: '10rem',
+                    display: 'flex',
+                    borderRadius: '3rem',
+                    color: 'grey',
+                    borderBlockColor: 'grey',
+                    '&:hover': { borderBlockColor: 'blue', color: 'white' },
+                  }}
+                >
+                  Send Message
+                </Button>
+              </Grid2>
             </Box>
           </Box>
         </Grid2>

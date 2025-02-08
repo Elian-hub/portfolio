@@ -1,6 +1,8 @@
 import { useState, useEffect } from 'react';
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, useLocation } from 'react-router-dom';
 import { CircularProgress, Box, Typography, Container } from '@mui/material';
+import { AnimatePresence } from 'framer-motion';
+
 import bg3 from '/assets/images/bg3.jpg';
 import './App.css';
 import Header from './Components/Header/Header';
@@ -9,9 +11,11 @@ import Intro from './Components/Intro/Intro';
 import About from './Components/AboutMe/About';
 import Services from './Components/Services/Services';
 import Contact from './Components/Contact/Contact';
+import PageWrapper from './Components/PageWrapper/PageWrapper';
 
 function App() {
   const [isLoading, setIsLoading] = useState(true);
+  const location = useLocation();
 
   useEffect(() => {
     // Simulating a delay
@@ -63,12 +67,46 @@ function App() {
     >
       <div>
         <Header />
-        <Routes>
-          <Route path='/' element={<Intro />} />
-          <Route path='/about' element={<About />} />
-          <Route path='/services' element={<Services />} />
-          <Route path='/contact' element={<Contact />} />
-        </Routes>
+        <AnimatePresence node='wait'>
+          <Routes location={location} key={location.pathname}>
+            <Route
+              path='/'
+              element={
+                <PageWrapper>
+                  <Intro />
+                </PageWrapper>
+              }
+              exact
+            />
+            <Route
+              path='/about'
+              element={
+                <PageWrapper>
+                  <About />
+                </PageWrapper>
+              }
+              exact
+            />
+            <Route
+              path='/services'
+              element={
+                <PageWrapper>
+                  <Services />
+                </PageWrapper>
+              }
+              exact
+            />
+            <Route
+              path='/contact'
+              element={
+                <PageWrapper>
+                  <Contact />
+                </PageWrapper>
+              }
+              exact
+            />
+          </Routes>
+        </AnimatePresence>
       </div>
     </Container>
   );
