@@ -9,7 +9,7 @@ import {
 } from '@mui/material';
 
 const About = () => {
-  const cvUrl = './assets/Elian CV.pdf';
+  const cvUrl = './assets/CVs/updatedCV.pdf';
   const email = 'elianmars13@gmail.com';
   return (
     <Box
