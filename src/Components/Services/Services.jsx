@@ -46,7 +46,7 @@ const Services = () => {
                 }}
               >
                 <CycloneRounded
-                  sx={{ fontSize: 50, padding: 2, color: 'primary' }}
+                  sx={{ fontSize: 50, padding: 2, color: 'white' }}
                 />
               </Box>
               <Stack direction='column'>
@@ -85,7 +85,7 @@ const Services = () => {
                 }}
               >
                 <AccessibilityNewRounded
-                  sx={{ fontSize: 50, padding: 2, color: 'primary' }}
+                  sx={{ fontSize: 50, padding: 2, color: 'white' }}
                 />
               </Box>
               <Stack direction='column'>
@@ -124,7 +124,7 @@ const Services = () => {
                 }}
               >
                 <SettingsSuggestRounded
-                  sx={{ fontSize: 50, padding: 2, color: 'primary' }}
+                  sx={{ fontSize: 50, padding: 2, color: 'white' }}
                 />
               </Box>
               <Stack direction='column'>
@@ -163,7 +163,7 @@ const Services = () => {
                 }}
               >
                 <DevicesFoldRounded
-                  sx={{ fontSize: 50, padding: 2, color: 'primary' }}
+                  sx={{ fontSize: 50, padding: 2, color: 'white' }}
                 />
               </Box>
               <Stack direction='column'>
@@ -202,7 +202,7 @@ const Services = () => {
                 }}
               >
                 <ViewQuiltRounded
-                  sx={{ fontSize: 50, padding: 2, color: 'primary' }}
+                  sx={{ fontSize: 50, padding: 2, color: 'white' }}
                 />
               </Box>
               <Stack direction='column'>
@@ -240,7 +240,7 @@ const Services = () => {
                 }}
               >
                 <RocketLaunchRounded
-                  sx={{ fontSize: 50, padding: 2, color: 'primary' }}
+                  sx={{ fontSize: 50, padding: 2, color: 'white' }}
                 />
               </Box>
               <Stack direction='column'>
@@ -279,7 +279,7 @@ const Services = () => {
                 }}
               >
                 <BrushRounded
-                  sx={{ fontSize: 50, padding: 2, color: 'primary' }}
+                  sx={{ fontSize: 50, padding: 2, color: 'white' }}
                 />
               </Box>
               <Stack direction='column'>

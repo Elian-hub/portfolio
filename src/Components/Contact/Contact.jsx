@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Box, Typography, Grid2, TextField, Button } from '@mui/material';
 import {
-  FaEnvelope, 
+  FaEnvelope,
   FaPhone,
   FaLinkedin,
   FaGithub,
@@ -55,10 +55,15 @@ const Contact = () => {
     <Box
       sx={{
         backgroundColor: 'rgba(10, 10, 10, 1)',
-        height: '100vh',
+        width: '100%',
+        height: { xs: '100vh', md: '100vh' },
         margin: '0',
         pt: 4,
-        px: 4,
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        alignContent: 'center',
+        flexDirection: 'column',
       }}
     >
       <Typography
