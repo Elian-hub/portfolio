@@ -1,14 +1,13 @@
-//import React from 'react'
+import { Box, Typography, Grid2, Stack } from '@mui/material';
 import {
-  Grid2,
-  Card,
-  CardContent,
-  CardActions,
-  Typography,
-  Button,
-  Box,
-  CardMedia,
-} from '@mui/material';
+  AccessibilityNewRounded,
+  BrushRounded,
+  CycloneRounded,
+  DevicesFoldRounded,
+  RocketLaunchRounded,
+  SettingsSuggestRounded,
+  ViewQuiltRounded,
+} from '@mui/icons-material';
 
 const Services = () => {
   return (
@@ -18,95 +17,292 @@ const Services = () => {
         backgroundColor: 'rgba(10, 10, 10, 1)',
         width: '100%',
         margin: '0',
+        pt: 4,
       }}
     >
-      <Box sx={{ paddingTop: '5%' }}>
-        <Grid2 container spacing={4} justifyContent='center'>
-          <Grid2 item xs={12} sm={6} md={4}>
-            <Card sx={{ width: 350, height: 500 }}>
-              <CardMedia
-                component='img'
-                image='./assets/images/img1.jpg'
-                alt='img'
-              ></CardMedia>
-              <CardContent>
-                <Typography variant='h4'>UI/UX, Graphic Design</Typography>
-                <Typography variant='p'>
-                  Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quam
-                  modi iste, nisi dignissimos, reiciendis illum sapiente
-                  blanditiis eligendi nemo debitis delectus architecto eum ipsum
-                  excepturi alias enim optio corrupti sed!
-                </Typography>
-              </CardContent>
-              <CardActions>
-                <Box
-                  display='flex'
-                  justifyContent='center'
-                  minWidth='100%'
-                  gap={2}
+      <Typography
+        variant='h3'
+        sx={{ color: 'gray', fontWeight: 'bold', textAlign: 'center' }}
+      >
+        What I Do
+      </Typography>
+      <Box>
+        <Grid2
+          container
+          rowGap={8}
+          sx={{ padding: { xs: '0.5rem', md: '3rem' }, paddingBottom: '3rem' }}
+        >
+          <Grid2 item size={{ xs: 12, md: 6 }}>
+            <Stack direction='row' spacing={4}>
+              <Box
+                display='flex'
+                alignItems='center'
+                justifyContent='center'
+                sx={{
+                  opacity: '50%',
+                  backgroundColor: 'blue',
+                  borderRadius: '1rem',
+                  height: '5rem',
+                }}
+              >
+                <CycloneRounded
+                  sx={{ fontSize: 50, padding: 2, color: 'primary' }}
+                />
+              </Box>
+              <Stack direction='column'>
+                <Typography
+                  sx={{
+                    fontWeight: 'bold',
+                    color: 'white',
+                    textAlign: 'left',
+                    typography: { xs: 'h6', md: 'h5' },
+                  }}
                 >
-                  <Button variant='outlined'>click me</Button>
-                  <Button variant='contained'>show more</Button>
-                </Box>
-              </CardActions>
-            </Card>
+                  Responsive Design
+                </Typography>
+                <Typography
+                  variant='body1'
+                  sx={{ color: 'gray', textAlign: 'left' }}
+                >
+                  Creating responsive layouts that adjust seamlessly to
+                  different screen sizes and devices, ensuring an optimal
+                  viewing experience for every user.
+                </Typography>
+              </Stack>
+            </Stack>
           </Grid2>
-          <Grid2 item xs={12} sm={6} md={4}>
-            <Card sx={{ width: 350, height: 500 }}>
-              <CardMedia
-                component='img'
-                image='./assets/images/img2.jpg'
-                alt='img'
-              ></CardMedia>
-              <CardContent>
-                <Typography variant='h4'>Web Development</Typography>
-                <Typography variant='p'>
-                  Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eius
-                  minima earum perspiciatis culpa qui soluta commodi quod alias
-                  distinctio, laboriosam delectus, natus ducimus tempore unde
-                  magnam incidunt mollitia architecto! Quae.
-                </Typography>
-              </CardContent>
-              <CardActions>
-                <Box
-                  display='flex'
-                  justifyContent='center'
-                  minWidth='100%'
-                  gap={2}
+          <Grid2 item size={{ xs: 12, md: 6 }}>
+            <Stack direction='row' spacing={4}>
+              <Box
+                display='flex'
+                alignItems='center'
+                justifyContent='center'
+                sx={{
+                  opacity: '50%',
+                  backgroundColor: 'blue',
+                  borderRadius: '1rem',
+                  height: '5rem',
+                }}
+              >
+                <AccessibilityNewRounded
+                  sx={{ fontSize: 50, padding: 2, color: 'primary' }}
+                />
+              </Box>
+              <Stack direction='column'>
+                <Typography
+                  sx={{
+                    fontWeight: 'bold',
+                    color: 'white',
+                    textAlign: 'left',
+                    typography: { xs: 'h6', md: 'h5' },
+                  }}
                 >
-                  <Button variant='outlined'>click me</Button>
-                  <Button variant='contained'>show more</Button>
-                </Box>
-              </CardActions>
-            </Card>
+                  Accessibility Enhancement
+                </Typography>
+                <Typography
+                  variant='body1'
+                  sx={{ color: 'gray', textAlign: 'left' }}
+                >
+                  Integrating accessibility best practices to make your
+                  application usable for individuals with disabilities,
+                  enhancing inclusivity.
+                </Typography>
+              </Stack>
+            </Stack>
           </Grid2>
-          <Grid2 item xs={12} sm={6} md={4}>
-            <Card sx={{ width: 350, height: 500 }}>
-              <CardMedia
-                component='img'
-                image='./assets/images/img3.jpeg'
-                alt='img'
-              ></CardMedia>
-              <CardContent>
-                <Typography variant='h4'>Smart Contract Development</Typography>
-                <Typography variant='p'>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure
-                  quas blanditiis, molestias libero ea vel minima delectus
-                  dolore suscipit enim?
-                </Typography>
-              </CardContent>
-              <CardActions>
-                <Box
-                  display='flex'
-                  justifyContent='center'
-                  minWidth='100%'
-                  gap={2}
+          <Grid2 item size={{ xs: 12, md: 6 }}>
+            <Stack direction='row' spacing={4}>
+              <Box
+                display='flex'
+                alignItems='center'
+                justifyContent='center'
+                sx={{
+                  opacity: '50%',
+                  backgroundColor: 'blue',
+                  borderRadius: '1rem',
+                  height: '5rem',
+                }}
+              >
+                <SettingsSuggestRounded
+                  sx={{ fontSize: 50, padding: 2, color: 'primary' }}
+                />
+              </Box>
+              <Stack direction='column'>
+                <Typography
+                  sx={{
+                    fontWeight: 'bold',
+                    color: 'white',
+                    textAlign: 'left',
+                    typography: { xs: 'h6', md: 'h5' },
+                  }}
                 >
-                  <Button variant='outlined'>click me</Button>
-                  <Button variant='contained'>show more</Button>
-                </Box>
-              </CardActions>
-            </Card>
+                  Backend Development
+                </Typography>
+                <Typography
+                  variant='body1'
+                  sx={{ color: 'gray', textAlign: 'left' }}
+                >
+                  Developing scalable backend services with Node.js, Express,
+                  and MongoDB to deliver robust and efficient server-side
+                  solutions for your application.
+                </Typography>
+              </Stack>
+            </Stack>
+          </Grid2>
+          <Grid2 item size={{ xs: 12, md: 6 }}>
+            <Stack direction='row' spacing={4}>
+              <Box
+                display='flex'
+                alignItems='center'
+                justifyContent='center'
+                sx={{
+                  opacity: '50%',
+                  backgroundColor: 'blue',
+                  borderRadius: '1rem',
+                  height: '5rem',
+                }}
+              >
+                <DevicesFoldRounded
+                  sx={{ fontSize: 50, padding: 2, color: 'primary' }}
+                />
+              </Box>
+              <Stack direction='column'>
+                <Typography
+                  sx={{
+                    fontWeight: 'bold',
+                    color: 'white',
+                    textAlign: 'left',
+                    typography: { xs: 'h6', md: 'h5' },
+                  }}
+                >
+                  Cross-Browser Compatibility
+                </Typography>
+                <Typography
+                  variant='body1'
+                  sx={{ color: 'gray', textAlign: 'left' }}
+                >
+                  Making sure your application functions reliably across various
+                  web browsers, delivering a consistent experience for all
+                  users.
+                </Typography>
+              </Stack>
+            </Stack>
+          </Grid2>
+          <Grid2 item size={{ xs: 12, md: 6 }}>
+            <Stack direction='row' spacing={4}>
+              <Box
+                display='flex'
+                alignItems='center'
+                justifyContent='center'
+                sx={{
+                  opacity: '50%',
+                  backgroundColor: 'blue',
+                  borderRadius: '1rem',
+                  height: '5rem',
+                }}
+              >
+                <ViewQuiltRounded
+                  sx={{ fontSize: 50, padding: 2, color: 'primary' }}
+                />
+              </Box>
+              <Stack direction='column'>
+                <Typography
+                  sx={{
+                    fontWeight: 'bold',
+                    color: 'white',
+                    textAlign: 'left',
+                    typography: { xs: 'h6', md: 'h5' },
+                  }}
+                >
+                  UI Design
+                </Typography>
+                <Typography
+                  variant='body1'
+                  sx={{ color: 'gray', textAlign: 'left' }}
+                >
+                  Creating intuitive user interfaces that are simple to
+                  navigate, improving user satisfaction and engagement.
+                </Typography>
+              </Stack>
+            </Stack>
+          </Grid2>
+          <Grid2 item size={{ xs: 12, md: 6 }}>
+            <Stack direction='row' spacing={4}>
+              <Box
+                display='flex'
+                alignItems='center'
+                justifyContent='center'
+                sx={{
+                  opacity: '50%',
+                  backgroundColor: 'blue',
+                  borderRadius: '1rem',
+                  height: '5rem',
+                }}
+              >
+                <RocketLaunchRounded
+                  sx={{ fontSize: 50, padding: 2, color: 'primary' }}
+                />
+              </Box>
+              <Stack direction='column'>
+                <Typography
+                  sx={{
+                    fontWeight: 'bold',
+                    color: 'white',
+                    textAlign: 'left',
+                    typography: { xs: 'h6', md: 'h5' },
+                  }}
+                >
+                  Performance Optimization
+                </Typography>
+                <Typography
+                  variant='body1'
+                  sx={{ color: 'gray', textAlign: 'left' }}
+                >
+                  Boosting your web application&apos;s performance by minimizing
+                  load times, eliminating lag, and ensuring seamless user
+                  interactions.
+                </Typography>
+              </Stack>
+            </Stack>
+          </Grid2>
+          <Grid2 item size={{ xs: 12, md: 6 }}>
+            <Stack direction='row' spacing={4}>
+              <Box
+                display='flex'
+                alignItems='center'
+                justifyContent='center'
+                sx={{
+                  opacity: '50%',
+                  backgroundColor: 'blue',
+                  borderRadius: '1rem',
+                  height: '5rem',
+                }}
+              >
+                <BrushRounded
+                  sx={{ fontSize: 50, padding: 2, color: 'primary' }}
+                />
+              </Box>
+              <Stack direction='column'>
+                <Typography
+                  sx={{
+                    fontWeight: 'bold',
+                    color: 'white',
+                    textAlign: 'left',
+                    typography: { xs: 'h6', md: 'h5' },
+                  }}
+                >
+                  Graphic Design
+                </Typography>
+                <Typography
+                  variant='body1'
+                  sx={{ color: 'gray', textAlign: 'left' }}
+                >
+                  Creating stunning visual designs using Adobe Illustrator and
+                  Photoshop, ensuring high-quality graphics for branding,
+                  marketing, and digital media.
+                </Typography>
+              </Stack>
+            </Stack>
           </Grid2>
         </Grid2>
       </Box>

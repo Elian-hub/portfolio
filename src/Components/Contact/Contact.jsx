@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Box, Typography, Grid2, TextField, Button } from '@mui/material';
 import {
-  FaEnvelope,
+  FaEnvelope, 
   FaPhone,
   FaLinkedin,
   FaGithub,
