@@ -33,7 +33,13 @@ const About = () => {
         About Me
       </Typography>
 
-      <Grid2 container spacing={10} mt={2} maxWidth='md'>
+      <Grid2
+        container
+        spacing={10}
+        mt={2}
+        maxWidth='md'
+        sx={{ mx: { xs: '2rem' } }} //margin left and right for extra small screens
+      >
         <Grid2 item size={{ xs: 12, md: 6 }}>
           <Typography
             variant='h4'
@@ -71,9 +77,12 @@ const About = () => {
         <Grid2
           item
           size={{ xs: 12, md: 6 }}
-          sx={{ display: 'flex', flexDirection: 'column' }}
+          sx={{
+            display: 'flex',
+            flexDirection: 'column',
+            mt: { xs: 0, md: 15 },
+          }}
           gap={4}
-          mt={15}
         >
           <Box style={{ textAlign: 'left', color: 'grey' }}>
             <Typography variant='h6'>
@@ -119,7 +128,7 @@ const About = () => {
           </Box>
         </Grid2>
         <Stack
-          direction={{ xs: 'column', md: 'row' }}
+          direction={{ xs: 'row', md: 'row' }}
           divider={<Divider orientation='vertical' color='white' flexItem />}
           spacing={5}
           sx={{
