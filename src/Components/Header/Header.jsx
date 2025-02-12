@@ -114,7 +114,16 @@ const Header = () => {
           <List>
             {navLinks.map((link) => (
               <ListItem button key={link.name} component={Link} to={link.path}>
-                <ListItemText primary={link.name} />
+                <ListItemText
+                  style={{
+                    color: 'blue',
+                    transition: 'color 0.3s ease-in-out',
+                    '&:hover': {
+                      color: 'grey',
+                    },
+                  }}
+                  primary={link.name}
+                />
               </ListItem>
             ))}
           </List>

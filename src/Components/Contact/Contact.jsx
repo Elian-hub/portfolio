@@ -7,6 +7,7 @@ import {
   FaGithub,
   FaTwitter,
 } from 'react-icons/fa';
+import { useNavigate } from 'react-router-dom';
 
 const Contact = () => {
   const urlLinkedIn =
@@ -14,41 +15,60 @@ const Contact = () => {
   const urlTwitter = 'https://x.com/wannaBeMase?t=paWjfK31TtNa79ijK0Jm8g&s=09';
   const urlGitHub = 'https://github.com/Elian-hub';
 
+  const navigate = useNavigate();
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [message, setMessage] = useState('');
   const [nameValid, setNameValid] = useState(true);
   const [emailValid, setEmailValid] = useState(true);
   const [messageValid, setMessageValid] = useState(true);
+  const [emailErrorText, setEmailErrorText] = useState('');
+
+  const validateEmail = (email) => /\S+@\S+\.\S+/.test(email);
+  const validateName = (name) => /^[A-Za-z\s]+$/.test(name);
+  const validateMessage = (message) => message.trim().length >= 10;
 
   const nameHandler = (e) => {
-    setName(e.target.value);
-    setNameValid(true);
+    const value = e.target.value;
+    if (validateName(value) || value === '') {
+      setName(value);
+      setNameValid(value.trim().length > 1);
+    }
   };
   const emailHandler = (e) => {
-    setEmail(e.target.value);
-    setEmailValid(true);
+    const value = e.target.value;
+    setEmail(value);
+    if (validateEmail(value)) {
+      setEmailValid(true);
+      setEmailErrorText('');
+    } else {
+      setEmailValid(false);
+      setEmailErrorText('Enter a valid email (e.g., example@domain.com)');
+    }
   };
+
   const messageHandler = (e) => {
-    setMessage(e.target.value);
-    setMessageValid(true);
+    const value = e.target.value;
+    setMessage(value);
+    setMessageValid(validateMessage(value));
   };
 
   const submitHandler = (e) => {
     e.preventDefault();
-    if (name.trim().length === 0) {
-      setNameValid(false);
+
+    const isNameValid = name.trim().length > 0 && validateName(name);
+    const isEmailValid = validateEmail(email);
+    const isMessageValid = validateMessage(message);
+
+    setNameValid(isNameValid);
+    setEmailValid(isEmailValid);
+    setMessageValid(isMessageValid);
+
+    if (!isNameValid || !isEmailValid || !isMessageValid) {
       return;
     }
 
-    if (email.trim().length === 0) {
-      setEmailValid(false);
-      return;
-    }
-    if (message.trim().length === 0) {
-      setMessageValid(false);
-      return;
-    }
+    navigate('/feedback');
   };
 
   return (
@@ -58,7 +78,6 @@ const Contact = () => {
         width: '100%',
         height: { xs: '100vh', md: '100vh' },
         margin: '0',
-        pt: 4,
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
@@ -78,7 +97,7 @@ const Contact = () => {
         spacing={4}
         justifyContent='center'
         alignItems='center'
-        sx={{ mt: 8, px: 3 }}
+        sx={{ mt: 6, px: 3 }}
       >
         <Grid2 item xs={12} md={6} sx={{ textAlign: 'center' }}>
           <Typography
@@ -148,11 +167,11 @@ const Contact = () => {
               backgroundColor: 'rgba(255,255,255,0.1)',
               p: 4,
               borderRadius: '12px',
-              backdropFilter: 'blur(10px)',
+              backdropFilter: 'blur(8px)',
             }}
           >
             <Box component='form' onSubmit={submitHandler}>
-              <Grid2 container spacing={2}>
+              <Grid2 container spacing={2} sx={{ mt: 4 }}>
                 <Grid2 container item spacing={2}>
                   <Grid2 item xs={12} sm={6}>
                     <TextField
@@ -162,7 +181,7 @@ const Contact = () => {
                       variant='filled'
                       value={name}
                       error={!nameValid}
-                      helperText={!nameValid && 'Please input a name'}
+                      helperText={!nameValid && 'Please input a valid name'}
                       onChange={nameHandler}
                       sx={{
                         borderRadius: '8px',
@@ -178,7 +197,7 @@ const Contact = () => {
                       variant='filled'
                       value={email}
                       error={!emailValid}
-                      helperText={!emailValid && 'Please input an email'}
+                      helperText={!emailValid ? emailErrorText : ''}
                       onChange={emailHandler}
                       sx={{
                         borderRadius: '8px',
@@ -193,14 +212,16 @@ const Contact = () => {
                     fullWidth
                     label='Message'
                     name='message'
-                    multiline
-                    rows={3}
+                    rows={2}
                     variant='filled'
                     value={message}
                     error={!messageValid}
-                    helperText={!messageValid && 'Please input a message'}
+                    helperText={!messageValid && 'Please input a valid message'}
                     onChange={messageHandler}
-                    sx={{ textarea: { backgroundColor: 'white' } }}
+                    sx={{
+                      borderRadius: '8px',
+                      input: { backgroundColor: 'white' },
+                    }}
                   />
                 </Grid2>
               </Grid2>
@@ -208,7 +229,7 @@ const Contact = () => {
               <Grid2
                 item
                 xs={12}
-                sx={{ display: 'flex', justifyContent: 'center' }}
+                sx={{ display: 'flex', justifyContent: 'center', mt: 6 }}
               >
                 <Button
                   type='submit'
@@ -231,6 +252,13 @@ const Contact = () => {
           </Box>
         </Grid2>
       </Grid2>
+      <Box sx={{ paddingTop: '4rem', paddingBottom: '3rem' }}>
+        <Typography variant='body2' color='grey' align='center'>
+          © {new Date().getFullYear()}{' '}
+          <span style={{ color: 'blue' }}>Elian Marube.</span> All rights
+          reserved.
+        </Typography>
+      </Box>
     </Box>
   );
 };

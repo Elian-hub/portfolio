@@ -12,6 +12,7 @@ import About from './Components/AboutMe/About';
 import Services from './Components/Services/Services';
 import Contact from './Components/Contact/Contact';
 import PageWrapper from './Components/PageWrapper/PageWrapper';
+import Response from './Components/Response/Response';
 
 function App() {
   const [isLoading, setIsLoading] = useState(true);
@@ -105,6 +106,7 @@ function App() {
               }
               exact
             />
+            <Route path='/feedback' element={<Response />} exact />
           </Routes>
         </AnimatePresence>
       </div>
