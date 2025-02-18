@@ -79,6 +79,7 @@ const Contact = () => {
         //height: { xs: '100vh', md: '100vh' },
         margin: '0',
         display: 'flex',
+        pt: 4,
         alignItems: 'center',
         justifyContent: 'center',
         alignContent: 'center',
