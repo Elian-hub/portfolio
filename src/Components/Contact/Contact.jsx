@@ -76,7 +76,7 @@ const Contact = () => {
       sx={{
         backgroundColor: 'rgba(10, 10, 10, 1)',
         width: '100%',
-        height: { xs: '100vh', md: '100vh' },
+        //height: { xs: '100vh', md: '100vh' },
         margin: '0',
         display: 'flex',
         alignItems: 'center',
@@ -252,7 +252,7 @@ const Contact = () => {
           </Box>
         </Grid2>
       </Grid2>
-      <Box sx={{ paddingTop: '4rem', paddingBottom: '3rem' }}>
+      <Box sx={{ paddingTop: '4rem', paddingBottom: '7rem' }}>
         <Typography variant='body2' color='grey' align='center'>
           © {new Date().getFullYear()}{' '}
           <span style={{ color: 'blue' }}>Elian Marube.</span> All rights
