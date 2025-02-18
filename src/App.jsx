@@ -3,7 +3,9 @@ import { Routes, Route, useLocation } from 'react-router-dom';
 import { CircularProgress, Box, Typography, Container } from '@mui/material';
 import { AnimatePresence } from 'framer-motion';
 
-import bg3 from '/assets/images/bg3.jpg';
+//import bg3 from '/assets/images/bg3.jpg';
+import bg5 from '/assets/images/bg5.jpg';
+
 import './App.css';
 import Header from './Components/Header/Header';
 import './scss/main.scss';
@@ -54,7 +56,7 @@ function App() {
       disableGutters
       sx={{
         minHeight: '100vh',
-        backgroundImage: `url(${bg3})`,
+        backgroundImage: `url(${bg5})`,
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         backgroundRepeat: 'no-repeat',
