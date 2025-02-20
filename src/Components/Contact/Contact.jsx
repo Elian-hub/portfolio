@@ -253,7 +253,7 @@ const Contact = () => {
           </Box>
         </Grid2>
       </Grid2>
-      <Box sx={{ paddingTop: '4rem', paddingBottom: '7rem' }}>
+      <Box sx={{ paddingTop: '4rem', paddingBottom: '7rem', mt: '4rem' }}>
         <Typography variant='body2' color='grey' align='center'>
           © {new Date().getFullYear()}{' '}
           <span style={{ color: 'blue' }}>Elian Marube.</span> All rights

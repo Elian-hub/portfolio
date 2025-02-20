@@ -18,8 +18,7 @@ const Header = () => {
   const [drawerOpen, setDrawerOpen] = useState(false);
   const location = useLocation();
 
-  const urlLinkedIn =
-    'https://www.linkedin.com/in/elian-marube-2891a52bb?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app';
+  const urlLinkedIn = 'https://www.linkedin.com/in/elian-marube-2891a52bb/';
   const urlTwitter = 'https://x.com/wannaBeMase?t=paWjfK31TtNa79ijK0Jm8g&s=09';
   const urlGitHub = 'https://github.com/Elian-hub';
 
@@ -77,8 +76,8 @@ const Header = () => {
             >
               <Typography
                 variant='h6'
-                color='white'
                 sx={{
+                  color: location.pathname === link.path ? 'grey' : 'white',
                   '&:hover': {
                     color: 'grey',
                     cursor: 'pointer',
@@ -106,7 +105,12 @@ const Header = () => {
 
       <Drawer anchor='left' open={drawerOpen} onClose={toggleDrawer(false)}>
         <Box
-          sx={{ width: 250 }}
+          sx={{
+            width: 250,
+            height: '100vh',
+            backgroundColor: 'black',
+            opacity: 0.8,
+          }}
           role='presentation'
           onClick={toggleDrawer(false)}
           onKeyDown={toggleDrawer(false)}
@@ -116,7 +120,7 @@ const Header = () => {
               <ListItem button key={link.name} component={Link} to={link.path}>
                 <ListItemText
                   style={{
-                    color: 'blue',
+                    color: location.pathname === link.path ? 'grey' : 'white',
                     transition: 'color 0.3s ease-in-out',
                     '&:hover': {
                       color: 'grey',
