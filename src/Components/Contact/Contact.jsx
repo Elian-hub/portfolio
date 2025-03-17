@@ -76,7 +76,7 @@ const Contact = () => {
       sx={{
         backgroundColor: 'rgba(10, 10, 10, 1)',
         width: '100%',
-        //height: { xs: '100vh', md: '100vh' },
+        minHeight: '100dvh',
         margin: '0',
         display: 'flex',
         pt: 4,

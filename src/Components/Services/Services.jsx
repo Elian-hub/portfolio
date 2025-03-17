@@ -16,6 +16,7 @@ const Services = () => {
       sx={{
         backgroundColor: 'rgba(10, 10, 10, 1)',
         width: '100%',
+        minHeight: '100dvh',
         margin: '0',
         pt: 4,
       }}

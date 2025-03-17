@@ -17,7 +17,7 @@ const Intro = () => {
         flexDirection: 'column',
         justifyContent: 'center',
         alignItems: 'center',
-        height: '100vh',
+        minHeight: '100dvh',
         textAlign: 'center',
         gap: 2,
       }}

@@ -16,7 +16,7 @@ const About = () => {
       margin={0}
       sx={{
         backgroundColor: 'rgba(10, 10, 10, 1)',
-
+        minHeight: '100dvh',
         width: '100%',
         margin: '0',
         pt: 4,
