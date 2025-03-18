@@ -53,7 +53,25 @@ const Contact = () => {
     setMessageValid(validateMessage(value));
   };
 
-  const submitHandler = (e) => {
+  // const submitHandler = (e) => {
+  //   e.preventDefault();
+
+  //   const isNameValid = name.trim().length > 0 && validateName(name);
+  //   const isEmailValid = validateEmail(email);
+  //   const isMessageValid = validateMessage(message);
+
+  //   setNameValid(isNameValid);
+  //   setEmailValid(isEmailValid);
+  //   setMessageValid(isMessageValid);
+
+  //   if (!isNameValid || !isEmailValid || !isMessageValid) {
+  //     return;
+  //   }
+
+  //   navigate('/feedback');
+  // };
+
+  const submitHandler = async (e) => {
     e.preventDefault();
 
     const isNameValid = name.trim().length > 0 && validateName(name);
@@ -68,7 +86,26 @@ const Contact = () => {
       return;
     }
 
-    navigate('/feedback');
+    try {
+      const response = await fetch('http://localhost:5000/api/send-email', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ name, email, message }),
+      });
+
+      const data = await response.json();
+
+      if (response.ok) {
+        console.log('Email sent successfully:', data);
+        navigate('/feedback');
+      } else {
+        console.error('Failed to send email:', data);
+      }
+    } catch (error) {
+      console.error('Error sending email:', error);
+    }
   };
 
   return (
