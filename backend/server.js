@@ -6,10 +6,14 @@ import nodemailer from 'nodemailer';
 dotenv.config();
 const app = express();
 const PORT = process.env.PORT || 5000;
+const allowedOrigins = [
+  'http://localhost:3000',
+  'https://elianmarube.netlify.app/',
+];
 
 app.use(
   cors({
-    origin: 'http://localhost:3000',
+    origin: 'allowedOrigins',
     methods: 'POST',
     allowedHeaders: 'Content-Type',
   })
