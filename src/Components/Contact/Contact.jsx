@@ -8,6 +8,14 @@ import {
   FaTwitter,
 } from 'react-icons/fa';
 import { useNavigate } from 'react-router-dom';
+const allowedOrigins = [
+  "http://localhost:3000",
+  "https://elianmarube.netlify.app",
+];
+
+const API_BASE_URL = allowedOrigins.includes(window.location.origin)
+  ? "https://nodemailer-t3dp.onrender.com"
+  : "http://localhost:5000";
 
 const Contact = () => {
   const urlLinkedIn =
@@ -87,7 +95,7 @@ const Contact = () => {
     }
 
     try {
-      const response = await fetch('http://localhost:5000/api/send-email', {
+      const response = await fetch(`${API_BASE_URL}/api/send-email`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
