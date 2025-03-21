@@ -27,10 +27,17 @@ const Services = () => {
       >
         What I Do
       </Typography>
-      <Box>
+      <Box
+        display='center'
+        alignItems='center'
+        justifyContent='center'
+        ml={6}
+        mr={6}
+      >
         <Grid2
           container
           rowGap={8}
+          alignItems='center'
           sx={{ padding: { xs: '0.5rem', md: '3rem' }, paddingBottom: '3rem' }}
         >
           <Grid2 item size={{ xs: 12, md: 6 }}>

@@ -39,69 +39,74 @@ const Header = () => {
       sx={{
         background:
           location.pathname === '/' ? 'transparent' : 'rgba(0, 0, 0, 0.7)',
-        width: '100%',
-        left: 0,
-        right: 0,
         boxShadow: 'none',
       }}
     >
-      <Toolbar sx={{ display: 'flex', justifyContent: 'space-between' }}>
-        <Typography variant='h5' fontWeight='bold' color='white'>
-          Elian Marube
-        </Typography>
+      <Box
+        sx={{
+          maxWidth: 1140,
+          width: '100%',
+          margin: '0 auto',
+        }}
+      >
+        <Toolbar sx={{ display: 'flex', justifyContent: 'space-between' }}>
+          <Typography variant='h5' fontWeight='bold' color='white'>
+            Elian Marube
+          </Typography>
 
-        <IconButton
-          edge='start'
-          color='inherit'
-          aria-label='menu'
-          sx={{ display: { xs: 'flex', md: 'none' } }}
-          onClick={toggleDrawer(true)}
-        >
-          <MenuIcon />
-        </IconButton>
+          <IconButton
+            edge='start'
+            color='inherit'
+            aria-label='menu'
+            sx={{ display: { xs: 'flex', md: 'none' } }}
+            onClick={toggleDrawer(true)}
+          >
+            <MenuIcon />
+          </IconButton>
 
-        <Box
-          sx={{
-            display: { xs: 'none', md: 'flex' },
-            gap: 2,
-            flexGrow: 1,
-            justifyContent: 'center',
-          }}
-        >
-          {navLinks.map((link) => (
-            <Link
-              key={link.name}
-              to={link.path}
-              style={{ textDecoration: 'none' }}
-            >
-              <Typography
-                variant='h6'
-                sx={{
-                  color: location.pathname === link.path ? 'grey' : 'white',
-                  '&:hover': {
-                    color: 'grey',
-                    cursor: 'pointer',
-                  },
-                }}
+          <Box
+            sx={{
+              display: { xs: 'none', md: 'flex' },
+              gap: 2,
+              flexGrow: 1,
+              justifyContent: 'center',
+            }}
+          >
+            {navLinks.map((link) => (
+              <Link
+                key={link.name}
+                to={link.path}
+                style={{ textDecoration: 'none' }}
               >
-                {link.name}
-              </Typography>
-            </Link>
-          ))}
-        </Box>
+                <Typography
+                  variant='h6'
+                  sx={{
+                    color: location.pathname === link.path ? 'grey' : 'white',
+                    '&:hover': {
+                      color: 'grey',
+                      cursor: 'pointer',
+                    },
+                  }}
+                >
+                  {link.name}
+                </Typography>
+              </Link>
+            ))}
+          </Box>
 
-        <Box sx={{ display: 'flex' }} gap={2}>
-          <a href={urlGitHub} target='_blank' rel='noopener noreferrer'>
-            <FaGithub color='white' />
-          </a>
-          <a href={urlLinkedIn} target='_blank' rel='noopener noreferrer'>
-            <FaLinkedin color='white' />
-          </a>
-          <a href={urlTwitter} target='_blank' rel='noopener noreferrer'>
-            <FaTwitter color='white' />
-          </a>
-        </Box>
-      </Toolbar>
+          <Box sx={{ display: 'flex' }} gap={{ xs: 1, md: 2 }}>
+            <a href={urlGitHub} target='_blank' rel='noopener noreferrer'>
+              <FaGithub color='white' />
+            </a>
+            <a href={urlLinkedIn} target='_blank' rel='noopener noreferrer'>
+              <FaLinkedin color='white' />
+            </a>
+            <a href={urlTwitter} target='_blank' rel='noopener noreferrer'>
+              <FaTwitter color='white' />
+            </a>
+          </Box>
+        </Toolbar>
+      </Box>
 
       <Drawer anchor='left' open={drawerOpen} onClose={toggleDrawer(false)}>
         <Box
