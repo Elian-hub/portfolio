@@ -31,6 +31,7 @@ const Contact = () => {
   const [emailValid, setEmailValid] = useState(true);
   const [messageValid, setMessageValid] = useState(true);
   const [emailErrorText, setEmailErrorText] = useState('');
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const validateEmail = (email) => /\S+@\S+\.\S+/.test(email);
   const validateName = (name) => /^[A-Za-z\s]+$/.test(name);
@@ -61,24 +62,6 @@ const Contact = () => {
     setMessageValid(validateMessage(value));
   };
 
-  // const submitHandler = (e) => {
-  //   e.preventDefault();
-
-  //   const isNameValid = name.trim().length > 0 && validateName(name);
-  //   const isEmailValid = validateEmail(email);
-  //   const isMessageValid = validateMessage(message);
-
-  //   setNameValid(isNameValid);
-  //   setEmailValid(isEmailValid);
-  //   setMessageValid(isMessageValid);
-
-  //   if (!isNameValid || !isEmailValid || !isMessageValid) {
-  //     return;
-  //   }
-
-  //   navigate('/feedback');
-  // };
-
   const submitHandler = async (e) => {
     e.preventDefault();
 
@@ -93,6 +76,7 @@ const Contact = () => {
     if (!isNameValid || !isEmailValid || !isMessageValid) {
       return;
     }
+    setIsSubmitting(true); //disables send message button
 
     try {
       const response = await fetch(`${API_BASE_URL}/api/send-email`, {
@@ -110,9 +94,11 @@ const Contact = () => {
         navigate('/feedback');
       } else {
         console.error('Failed to send email:', data);
+        setIsSubmitting(false); //re-enables send message button on error
       }
     } catch (error) {
       console.error('Error sending email:', error);
+      setIsSubmitting(false); //re-enables send message button on error
     }
   };
 
@@ -279,6 +265,7 @@ const Contact = () => {
               >
                 <Button
                   type='submit'
+                  disabled={isSubmitting}
                   variant='outlined'
                   sx={{
                     backgroundColor: 'transparent',
@@ -291,7 +278,7 @@ const Contact = () => {
                     '&:hover': { borderBlockColor: 'blue', color: 'white' },
                   }}
                 >
-                  Send Message
+                  {isSubmitting ? 'Sending...' : 'Send Message'}
                 </Button>
               </Grid2>
             </Box>
