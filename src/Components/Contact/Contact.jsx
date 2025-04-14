@@ -1,5 +1,12 @@
 import { useState } from 'react';
-import { Box, Typography, Grid2, TextField, Button } from '@mui/material';
+import {
+  Box,
+  Typography,
+  Grid2,
+  TextField,
+  Button,
+  CircularProgress,
+} from '@mui/material';
 import {
   FaEnvelope,
   FaPhone,
@@ -273,12 +280,27 @@ const Contact = () => {
                     width: '10rem',
                     display: 'flex',
                     borderRadius: '3rem',
-                    color: 'grey',
+                    color: isSubmitting ? 'white' : 'grey',
                     borderBlockColor: 'grey',
                     '&:hover': { borderBlockColor: 'blue', color: 'white' },
+                    '&.Mui-disabled': {
+                      color: 'grey',
+                      borderBlockColor: 'grey',
+                      opacity: 1,
+                    },
                   }}
                 >
-                  {isSubmitting ? 'Sending...' : 'Send Message'}
+                  {isSubmitting ? (
+                    <>
+                      <CircularProgress
+                        size={20}
+                        sx={{ color: 'grey', mr: 1 }}
+                      />
+                      Sending...
+                    </>
+                  ) : (
+                    'Send Message'
+                  )}
                 </Button>
               </Grid2>
             </Box>
