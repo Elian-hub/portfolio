@@ -9,7 +9,7 @@ import {
 } from '@mui/material';
 
 const About = () => {
-  const cvUrl = './assets/CVs/updatedCV.pdf';
+  const cvUrl = './assets/CVs/CV.pdf';
   const email = 'elianmars13@gmail.com';
   return (
     <Box
@@ -112,6 +112,7 @@ const About = () => {
           <Box>
             <Button
               href={cvUrl}
+              target='_blank'
               variant='outlined'
               sx={{
                 backgroundColor: 'transparent',
